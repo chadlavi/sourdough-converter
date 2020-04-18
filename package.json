@@ -1,5 +1,6 @@
 {
   "name": "sourdough-converter",
+  "homepage": "https://chadlavi.github.io/sourdough-converter/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
