@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-text {
+  font-size: 0.75rem;
+}
+
+input {
+  border: 1px solid;
+  padding: 8px;
+  margin-bottom: 8px;
+}
