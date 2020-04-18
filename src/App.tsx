@@ -20,6 +20,7 @@ const App = (): JSX.Element => {
 
   return (
     <div id='App'>
+      <h1>Sourdough converter</h1>
       <Calculator {...calculatorProps} />
       <Display {...displayProps} />
     </div>

@@ -22,28 +22,32 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
   }
 
   return (
-    <div id={'calculator'}>
+    <div className={'half'} id={'calculator'}>
       <form
         autoComplete={'false'}
       >
         <label>
           <span className={'label-text'}>
-            Flour (g)
+            Original recipe flour (g)
           </span>
           <input
             value={flour}
             name={'water'}
             onChange={onChange(setFlour)}
+            type='text'
+            pattern='[0-9]*'
           />
         </label>
         <label>
           <span className={'label-text'}>
-            Water (g)
+            Original recipe water (g)
           </span>
           <input
             value={water}
             name={'water'}
             onChange={onChange(setWater)}
+            type='text'
+            pattern='[0-9]*'
           />
         </label>
       </form>

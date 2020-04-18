@@ -10,7 +10,25 @@ export const numberWithCommas = (x: string | number): string => (x || 0)
   .toString()
   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-export const Display = (props: DisplayProps): JSX.Element | null => {
+export const linkify = (link: string) => (
+  <a
+    href={link}
+    rel='noopener noreferrer'
+    target='_blank'
+  >
+    {link}
+  </a>
+)
+
+const references = [
+  'https://cnz.to/tips-tricks/converting-yeast-based-recipes-to-use-a-sourdough-starter/',
+  'http://www.wildyeastblog.com/going-wild/',
+  'http://www.thefreshloaf.com/node/34811/how-use-sourdough-starter-place-yeast',
+]
+
+const referenceLinks = references.map(r => (<li key={r}>{linkify(r)}</li>))
+
+export const Display = (props: DisplayProps): JSX.Element => {
   const {
     flour,
     water,
@@ -39,13 +57,15 @@ export const Display = (props: DisplayProps): JSX.Element | null => {
     },
   ]
 
-  return (flourNumber > 0 && waterNumber > 0) ? (
-    <dl>
+  return (
+    <>
+    {(flourNumber > 0 && waterNumber > 0) &&
+    <dl className={'half'} title={'Modified recipe'}>
       <dt>
         Baker's percentage
       </dt>
       <dd>
-        {percentage}%
+        <strong>{percentage}%</strong>
       </dd>
       {
         displayData.map(d => (
@@ -54,7 +74,7 @@ export const Display = (props: DisplayProps): JSX.Element | null => {
               {d.label}
             </dt>
             <dd>
-              {d.data}g
+              <strong>{d.data}g</strong>
             </dd>
           </React.Fragment>
         ))
@@ -63,7 +83,7 @@ export const Display = (props: DisplayProps): JSX.Element | null => {
         Yeast
       </dt>
       <dd>
-        0g
+        <strong>0g</strong>
       </dd>
       <dt>
         Other ingredients
@@ -72,5 +92,12 @@ export const Display = (props: DisplayProps): JSX.Element | null => {
         <i>no change</i>
       </dd>
     </dl>
-  ) : null
+    }
+    <p>Note: sourdough starters take longer than dried yeast! You'll probably need to increase the fermentation time in your desired recipe.</p>
+    <p>See also:</p>
+    <ul>
+      {referenceLinks}
+    </ul>
+    </>
+  )
 }
