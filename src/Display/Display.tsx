@@ -60,6 +60,12 @@ export const Display = (props: DisplayProps): JSX.Element | null => {
         ))
       }
       <dt>
+        Yeast
+      </dt>
+      <dd>
+        0g
+      </dd>
+      <dt>
         Other ingredients
       </dt>
       <dd>
