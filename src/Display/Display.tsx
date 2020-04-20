@@ -10,7 +10,7 @@ export const numberWithCommas = (x: string | number): string => (x || 0)
   .toString()
   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-export const linkify = (link: string) => (
+export const linkify = (link: string): JSX.Element => (
   <a
     href={link}
     rel='noopener noreferrer'
@@ -59,45 +59,48 @@ export const Display = (props: DisplayProps): JSX.Element => {
 
   return (
     <>
-    {(flourNumber > 0 && waterNumber > 0) &&
-    <dl className={'half'} title={'Modified recipe'}>
-      <dt>
-        Baker's percentage
-      </dt>
-      <dd>
-        <strong>{percentage}%</strong>
-      </dd>
-      {
-        displayData.map(d => (
-          <React.Fragment key={d.label}>
-            <dt>
-              {d.label}
-            </dt>
-            <dd>
-              <strong>{d.data}g</strong>
-            </dd>
-          </React.Fragment>
-        ))
+      {(flourNumber > 0 && waterNumber > 0) &&
+      <dl className={'half'} title={'Modified recipe'}>
+        <dt>
+          Baker&apos;s percentage
+        </dt>
+        <dd>
+          <strong>{percentage}%</strong>
+        </dd>
+        {
+          displayData.map(d => (
+            <React.Fragment key={d.label}>
+              <dt>
+                {d.label}
+              </dt>
+              <dd>
+                <strong>{d.data}g</strong>
+              </dd>
+            </React.Fragment>
+          ))
+        }
+        <dt>
+          Yeast
+        </dt>
+        <dd>
+          <strong>0g</strong>
+        </dd>
+        <dt>
+          Other ingredients
+        </dt>
+        <dd>
+          <i>no change</i>
+        </dd>
+      </dl>
       }
-      <dt>
-        Yeast
-      </dt>
-      <dd>
-        <strong>0g</strong>
-      </dd>
-      <dt>
-        Other ingredients
-      </dt>
-      <dd>
-        <i>no change</i>
-      </dd>
-    </dl>
-    }
-    <p>Note: sourdough starters take longer than dried yeast! You'll probably need to increase the fermentation time in your desired recipe.</p>
-    <p>See also:</p>
-    <ul>
-      {referenceLinks}
-    </ul>
+      <p>
+        Note: sourdough starters take longer than dried yeast!
+        You&apos;ll probably need to increase the fermentation time in your desired recipe.
+      </p>
+      <p>See also:</p>
+      <ul>
+        {referenceLinks}
+      </ul>
     </>
   )
 }

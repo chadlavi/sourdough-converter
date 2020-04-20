@@ -16,7 +16,9 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
     setFlour,
   } = props
 
-  const onChange = (setter: React.Dispatch<React.SetStateAction<string>>) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (
+    setter: React.Dispatch<React.SetStateAction<string>>
+  ) => (e: React.ChangeEvent<HTMLInputElement>): void => {
     const newValue = e.currentTarget.value.replace(/[^\d]/, '')
     setter(newValue)
   }
