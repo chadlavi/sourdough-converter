@@ -9,7 +9,8 @@ label {
 }
 
 .label-text {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  margin-block-end: 4px;
 }
 
 input {
@@ -19,4 +20,14 @@ input {
   margin-bottom: 8px;
   -webkit-appearance: none;
   font-size: inherit;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

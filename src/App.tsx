@@ -4,8 +4,8 @@ import { Calculator, CalculatorProps } from './Calculator/Calculator'
 import { Display, DisplayProps } from './Display/Display'
 
 const App = (): JSX.Element => {
-  const [flour, setFlour] = React.useState<string>('')
-  const [water, setWater] = React.useState<string>('')
+  const [flour, setFlour] = React.useState<number|undefined>()
+  const [water, setWater] = React.useState<number|undefined>()
 
   const displayProps: DisplayProps = {
     flour,

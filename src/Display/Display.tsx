@@ -2,8 +2,8 @@ import * as React from 'react'
 import './Display.css'
 
 export interface DisplayProps {
-  flour: string
-  water: string
+  flour: number | undefined
+  water: number | undefined
 }
 
 export const numberWithCommas = (x: string | number): string => (x || 0)
@@ -30,16 +30,14 @@ const referenceLinks = references.map(r => (<li key={r}>{linkify(r)}</li>))
 
 export const Display = (props: DisplayProps): JSX.Element => {
   const {
-    flour,
-    water,
+    flour = 0,
+    water = 0,
   } = props
 
-  const flourNumber = parseInt(flour, 10)
-  const waterNumber = parseInt(water, 10)
-  const percentage = 100 * (waterNumber / flourNumber)
-  const sourdough = (flourNumber + waterNumber) / 6
-  const flourResult = numberWithCommas(Math.round(flourNumber - (sourdough / 2)))
-  const waterResult = numberWithCommas(Math.round(waterNumber - (sourdough / 2)))
+  const percentage = 100 * (water / flour)
+  const sourdough = (flour + water) / 6
+  const flourResult = numberWithCommas(Math.round(flour - (sourdough / 2)))
+  const waterResult = numberWithCommas(Math.round(water - (sourdough / 2)))
   const starterResult = numberWithCommas(Math.round(sourdough))
 
   const displayData = [
@@ -59,7 +57,7 @@ export const Display = (props: DisplayProps): JSX.Element => {
 
   return (
     <>
-      {(flourNumber > 0 && waterNumber > 0) &&
+      {(flour > 0 && water > 0) &&
       <dl className={'half'} title={'Modified recipe'}>
         <dt>
           Baker&apos;s percentage

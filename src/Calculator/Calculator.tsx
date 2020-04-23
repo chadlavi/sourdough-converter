@@ -2,10 +2,10 @@ import * as React from 'react'
 import './Calculator.css'
 
 export interface CalculatorProps {
-  water: string
-  flour: string
-  setWater: React.Dispatch<React.SetStateAction<string>>
-  setFlour: React.Dispatch<React.SetStateAction<string>>
+  water: number|undefined
+  flour: number|undefined
+  setWater: React.Dispatch<React.SetStateAction<number|undefined>>
+  setFlour: React.Dispatch<React.SetStateAction<number|undefined>>
 }
 
 export const Calculator = (props: CalculatorProps): JSX.Element => {
@@ -17,10 +17,18 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
   } = props
 
   const onChange = (
-    setter: React.Dispatch<React.SetStateAction<string>>
+    setter: React.Dispatch<React.SetStateAction<number | undefined>>
   ) => (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const newValue = e.currentTarget.value.replace(/[^\d]/, '')
+    const newValue = parseFloat(e.currentTarget.value || '0')
+    console.log(newValue)
     setter(newValue)
+  }
+
+  const selectAll = (e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
+    const t = e.currentTarget
+    setTimeout(() => {
+      t.select()
+    }, 100)
   }
 
   return (
@@ -33,11 +41,16 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             Original recipe flour (g)
           </span>
           <input
-            value={flour}
+            value={flour || ' '}
             name={'water'}
             onChange={onChange(setFlour)}
-            type='text'
-            pattern='[0-9]*'
+            id={'flour'}
+            type={'number'}
+            inputMode={'decimal'}
+            pattern={'[0-9]*'}
+            min={0}
+            onFocus={selectAll}
+            onClick={selectAll}
           />
         </label>
         <label>
@@ -45,11 +58,15 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             Original recipe water (g)
           </span>
           <input
-            value={water}
+            value={water || ' '}
             name={'water'}
             onChange={onChange(setWater)}
-            type='text'
-            pattern='[0-9]*'
+            type={'number'}
+            inputMode={'decimal'}
+            pattern={'[0-9]*'}
+            min={0}
+            onFocus={selectAll}
+            onClick={selectAll}
           />
         </label>
       </form>
