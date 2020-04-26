@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Calculator.css'
+import { Input, Grid, GridItem } from '@chadlavi/clear'
 
 export interface CalculatorProps {
   water: number|undefined
@@ -32,17 +32,13 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
   }
 
   return (
-    <div className={'half'} id={'calculator'}>
-      <form
-        autoComplete={'false'}
-      >
-        <label>
-          <span className={'label-text'}>
-            Original recipe flour (g)
-          </span>
-          <input
-            value={flour || ' '}
-            name={'water'}
+    <div id={'calculator'}>
+      <Grid>
+        <GridItem>
+          <Input
+            value={flour}
+            name={'flour'}
+            label={'Original recipe flour (g)'}
             onChange={onChange(setFlour)}
             id={'flour'}
             type={'number'}
@@ -52,24 +48,22 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             onFocus={selectAll}
             onClick={selectAll}
           />
-        </label>
-        <label>
-          <span className={'label-text'}>
-            Original recipe water (g)
-          </span>
-          <input
-            value={water || ' '}
+        </GridItem>
+        <GridItem>
+          <Input
+            value={water}
             name={'water'}
             onChange={onChange(setWater)}
             type={'number'}
             inputMode={'decimal'}
             pattern={'[0-9]*'}
+            label={'Original recipe water (g)'}
             min={0}
             onFocus={selectAll}
             onClick={selectAll}
           />
-        </label>
-      </form>
+        </GridItem>
+      </Grid>
     </div>
   )
 }

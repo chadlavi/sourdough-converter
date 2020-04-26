@@ -9,8 +9,6 @@ dd {
   margin-block-end: 8px;
 }
 ul {
-  padding-block-start: 0 !important;
-  margin-left: 24px !important;
   word-break: break-all;
 }
 li {

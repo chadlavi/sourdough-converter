@@ -10,24 +10,6 @@ export const numberWithCommas = (x: string | number): string => (x || 0)
   .toString()
   .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-export const linkify = (link: string): JSX.Element => (
-  <a
-    href={link}
-    rel='noopener noreferrer'
-    target='_blank'
-  >
-    {link}
-  </a>
-)
-
-const references = [
-  'https://cnz.to/tips-tricks/converting-yeast-based-recipes-to-use-a-sourdough-starter/',
-  'http://www.wildyeastblog.com/going-wild/',
-  'http://www.thefreshloaf.com/node/34811/how-use-sourdough-starter-place-yeast',
-]
-
-const referenceLinks = references.map(r => (<li key={r}>{linkify(r)}</li>))
-
 export const Display = (props: DisplayProps): JSX.Element => {
   const {
     flour = 0,
@@ -58,7 +40,7 @@ export const Display = (props: DisplayProps): JSX.Element => {
   return (
     <>
       {(flour > 0 && water > 0) &&
-      <dl className={'half'} title={'Modified recipe'}>
+      <dl title={'Modified recipe'}>
         <dt>
           Baker&apos;s percentage
         </dt>
@@ -91,14 +73,6 @@ export const Display = (props: DisplayProps): JSX.Element => {
         </dd>
       </dl>
       }
-      <p>
-        Note: sourdough starters take longer than dried yeast!
-        You&apos;ll probably need to increase the fermentation time in your desired recipe.
-      </p>
-      <p>See also:</p>
-      <ul>
-        {referenceLinks}
-      </ul>
     </>
   )
 }
