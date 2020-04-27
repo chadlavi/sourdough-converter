@@ -2,10 +2,10 @@ import * as React from 'react'
 import { Input, Grid, GridItem } from '@chadlavi/clear'
 
 export interface CalculatorProps {
-  water: number|undefined
-  flour: number|undefined
-  setWater: React.Dispatch<React.SetStateAction<number|undefined>>
-  setFlour: React.Dispatch<React.SetStateAction<number|undefined>>
+  water: number | undefined
+  flour: number | undefined
+  setWater: React.Dispatch<React.SetStateAction<number | undefined>>
+  setFlour: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 export const Calculator = (props: CalculatorProps): JSX.Element => {
@@ -24,13 +24,6 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
     setter(newValue)
   }
 
-  const selectAll = (e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
-    const t = e.currentTarget
-    setTimeout(() => {
-      t.select()
-    }, 100)
-  }
-
   return (
     <div id={'calculator'}>
       <Grid>
@@ -45,8 +38,6 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             inputMode={'decimal'}
             pattern={'[0-9]*'}
             min={0}
-            onFocus={selectAll}
-            onClick={selectAll}
           />
         </GridItem>
         <GridItem>
@@ -59,8 +50,6 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             pattern={'[0-9]*'}
             label={'Original recipe water (g)'}
             min={0}
-            onFocus={selectAll}
-            onClick={selectAll}
           />
         </GridItem>
       </Grid>
