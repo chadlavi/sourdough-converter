@@ -39,7 +39,6 @@ export const Display = (props: DisplayProps): JSX.Element => {
 
   return (
     <>
-      {(flour > 0 && water > 0) &&
       <dl title={'Modified recipe'}>
         <dt>
           Baker&apos;s percentage
@@ -72,7 +71,6 @@ export const Display = (props: DisplayProps): JSX.Element => {
           <i>no change</i>
         </dd>
       </dl>
-      }
     </>
   )
 }

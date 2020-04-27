@@ -9,6 +9,7 @@ import {
   Header,
   Link,
   Page,
+  Paragraph,
 } from '@chadlavi/clear'
 
 export const linkify = (link: string): JSX.Element => (
@@ -43,6 +44,8 @@ const App = (): JSX.Element => {
     setWater,
   }
 
+  const showDisplay = Boolean(flour && flour > 0 && water && water > 0)
+
   return (
     <>
       <CSSVariables />
@@ -52,21 +55,26 @@ const App = (): JSX.Element => {
           <GridItem>
             <Header>Sourdough converter</Header>
           </GridItem>
-          <GridItem size={6}>
+          <GridItem size={showDisplay ? 8 : 12}>
             <Calculator {...calculatorProps} />
           </GridItem>
-          <GridItem size={6}>
+          {showDisplay && <GridItem size={4}>
             <Display {...displayProps} />
-          </GridItem>
+          </GridItem>}
           <GridItem>
-            <p>
+            <Paragraph>
               Note: sourdough starters take longer than dried yeast!
               You&apos;ll probably need to increase the fermentation time in your desired recipe.
-            </p>
-            <p>See also:</p>
+            </Paragraph>
+            <Paragraph>See also:</Paragraph>
             <ul>
               {referenceLinks}
             </ul>
+          </GridItem>
+          <GridItem>
+            <Paragraph margins={false} style={{textAlign: 'right', fontSize: 'var(--clear-font-size-label)'}}>
+              Built with <Link href={'https://chadlavi.github.io/clear/'}>Clear</Link>
+            </Paragraph>
           </GridItem>
         </Grid>
       </Page>
