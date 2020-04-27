@@ -16,7 +16,7 @@ export const Display = (props: DisplayProps): JSX.Element => {
     water = 0,
   } = props
 
-  const percentage = 100 * (water / flour)
+  const percentage = (100 * (water / flour)).toFixed(2)
   const sourdough = (flour + water) / 6
   const flourResult = numberWithCommas(Math.round(flour - (sourdough / 2)))
   const waterResult = numberWithCommas(Math.round(water - (sourdough / 2)))

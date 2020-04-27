@@ -1,14 +1,19 @@
 import React from 'react'
-import './App.css'
 import { Calculator, CalculatorProps } from './Calculator/Calculator'
 import { Display, DisplayProps } from './Display/Display'
-import { CSSBaseline, Grid, GridItem, Page, Link } from '@chadlavi/clear'
+import {
+  CSSVariables,
+  GlobalStyles,
+  Grid,
+  GridItem,
+  Header,
+  Link,
+  Page,
+} from '@chadlavi/clear'
 
 export const linkify = (link: string): JSX.Element => (
   <Link
     href={link}
-    rel='noopener noreferrer'
-    target='_blank'
   >
     {link}
   </Link>
@@ -40,11 +45,12 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      <CSSBaseline />
+      <CSSVariables />
+      <GlobalStyles />
       <Page>
         <Grid spacing={16}>
           <GridItem>
-            <h1>Sourdough converter</h1>
+            <Header>Sourdough converter</Header>
           </GridItem>
           <GridItem size={6}>
             <Calculator {...calculatorProps} />
