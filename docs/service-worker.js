@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sourdough-converter/precache-manifest.5209c1ff0a52350eb3b4a72c950a015b.js"
+  "/sourdough-converter/precache-manifest.08129732fa5ca62af308a1317190758e.js"
 );
 
 self.addEventListener('message', (event) => {
