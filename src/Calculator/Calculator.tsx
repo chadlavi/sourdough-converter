@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Input, Grid, GridItem } from '@chadlavi/clear'
+import { Input, Grid, GridItem, Label } from '@chadlavi/clear'
 
 export interface CalculatorProps {
   water: number | undefined
@@ -28,10 +28,10 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
     <div id={'calculator'}>
       <Grid>
         <GridItem>
+          <Label htmlFor='flour'>Original recipe flour (g)</Label>
           <Input
             value={flour}
             name={'flour'}
-            label={'Original recipe flour (g)'}
             onChange={onChange(setFlour)}
             id={'flour'}
             type={'number'}
@@ -41,6 +41,7 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
           />
         </GridItem>
         <GridItem>
+          <Label htmlFor='water'>Original recipe water (g)</Label>
           <Input
             value={water}
             name={'water'}
@@ -48,7 +49,6 @@ export const Calculator = (props: CalculatorProps): JSX.Element => {
             type={'number'}
             inputMode={'decimal'}
             pattern={'[0-9]*'}
-            label={'Original recipe water (g)'}
             min={0}
           />
         </GridItem>
