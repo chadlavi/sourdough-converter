@@ -5,17 +5,17 @@
     "main.js.map": "/sourdough-converter/static/js/main.22b58de3.chunk.js.map",
     "runtime-main.js": "/sourdough-converter/static/js/runtime-main.944b3e86.js",
     "runtime-main.js.map": "/sourdough-converter/static/js/runtime-main.944b3e86.js.map",
-    "static/js/2.75383449.chunk.js": "/sourdough-converter/static/js/2.75383449.chunk.js",
-    "static/js/2.75383449.chunk.js.map": "/sourdough-converter/static/js/2.75383449.chunk.js.map",
+    "static/js/2.0a4717a2.chunk.js": "/sourdough-converter/static/js/2.0a4717a2.chunk.js",
+    "static/js/2.0a4717a2.chunk.js.map": "/sourdough-converter/static/js/2.0a4717a2.chunk.js.map",
     "index.html": "/sourdough-converter/index.html",
-    "precache-manifest.4aa57096f94fbbd306f423d156512a0c.js": "/sourdough-converter/precache-manifest.4aa57096f94fbbd306f423d156512a0c.js",
+    "precache-manifest.67bec30b83fe235d4f8c111372b7f00c.js": "/sourdough-converter/precache-manifest.67bec30b83fe235d4f8c111372b7f00c.js",
     "service-worker.js": "/sourdough-converter/service-worker.js",
     "static/css/main.353867fb.chunk.css.map": "/sourdough-converter/static/css/main.353867fb.chunk.css.map",
-    "static/js/2.75383449.chunk.js.LICENSE.txt": "/sourdough-converter/static/js/2.75383449.chunk.js.LICENSE.txt"
+    "static/js/2.0a4717a2.chunk.js.LICENSE.txt": "/sourdough-converter/static/js/2.0a4717a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.944b3e86.js",
-    "static/js/2.75383449.chunk.js",
+    "static/js/2.0a4717a2.chunk.js",
     "static/css/main.353867fb.chunk.css",
     "static/js/main.22b58de3.chunk.js"
   ]
