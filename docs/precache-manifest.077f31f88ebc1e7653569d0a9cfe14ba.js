@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "11e681f979da79a155815f166bbb1167",
+    "revision": "96c89fa2d2a2d5b4a957382c59e5c0b0",
     "url": "/sourdough-converter/index.html"
   },
   {
@@ -8,12 +8,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sourdough-converter/static/css/main.353867fb.chunk.css"
   },
   {
-    "revision": "384843713f9cd82377df",
-    "url": "/sourdough-converter/static/js/2.7f0b87f8.chunk.js"
+    "revision": "54b40128164602ccb33e",
+    "url": "/sourdough-converter/static/js/2.aa96c667.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/sourdough-converter/static/js/2.7f0b87f8.chunk.js.LICENSE.txt"
+    "url": "/sourdough-converter/static/js/2.aa96c667.chunk.js.LICENSE.txt"
   },
   {
     "revision": "aac0f09b9fb252f12427",
